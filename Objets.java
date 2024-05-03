@@ -18,11 +18,8 @@ public class Objets {
       }
       public String getNom(){
       return this.nom ;}
-       ArrayList<String> listeObjet= new ArrayList <>();
-      
-  
-      
-      
+     
+     
  public void  utiliser(Joueur joueur  ){ 
    
          if(!joueur.estMush()){  /* on verifie si le joueur n'est pas un mush car les objets sont utilisables par 
@@ -128,7 +125,7 @@ public class Objets {
     }
          
 }
- 
+   ArrayList<String> listeObjet= new ArrayList <>();
   public Objets(){
        //Création et ajout des objets dans la liste
        listeObjet.add("Armure");
