@@ -18,12 +18,15 @@ public class Objets {
       }
       public String getNom(){
       return this.nom ;}
-      
+       ArrayList<String> listeObjet= new ArrayList <>();
       
   
+      
+      
  public void  utiliser(Joueur joueur  ){ 
    
-         if(!joueur.estMush()){ 
+         if(!joueur.estMush()){  /* on verifie si le joueur n'est pas un mush car les objets sont utilisables par 
+             les humains sinon les mushs ne puvent pas les utiliser*/
          
           switch(this.nom){
                    
@@ -51,7 +54,8 @@ public class Objets {
  
                  break;
                  case "savon":
-                     if(joueur.getInventaire().contains("savon")){ // on doit verifier si le savon est dans l'inventaire du joueur , il aura une reduction de PA
+                     if(joueur.getInventaire().contains("savon")){ /* on doit verifier si le savon est
+                         dans l'inventaire du joueur ,il aura une reduction de PA*/
                          joueur.depenserPa(1);
                      }
                        case "couteau": // si le joueur utilise un couteau , il 2PV
@@ -72,36 +76,23 @@ public class Objets {
                        break;
                        
                 case "Médikit":
-                    /* le joueur peut soigner lui meme ou un autre j don on va verifier si le kit et bel bien dans l'inventaire
+                    /* le joueur peut soigner lui meme ou un autre j donc on va verifier
+                    si le kit et bel bien dans l'inventaire
                     et que son PA est supperieur >= 2 pour pouvoir se soigner sinon il ne peut pas etre soigner */
                     if(joueur.getInventaire().contains("médikit")&& joueur.getPA()>=2){
                          joueur.soignerJoueur();
                          joueur.depenserPa(2);
                         
                       }
-                      else {
+                    else {
                       System.out.println("Dommage ,vous n'avez pas assez de PA");}
                   break;
                             
-                        
- 
-               
-                     
  
                  case "tortinette":
  
                  break;
-                 case "éxtinteur":
- 
-                 break;
-              
-                 case "Grénade":
- 
-                 break;
-                
-                 case "Caméra":
- 
-                 break;
+                 
                  case "Souche de test de Mush":
  
                  break;
@@ -125,66 +116,20 @@ public class Objets {
                  
                  case "mycoscan":
  
+                 break; 
+                 default: 
+                     System.out.println("dedolé cet objet n'a pas d'action ");// ou n'existe pas 
                  break;
                  
-                 case "lit":
- 
-                 break;
-                 
-                 case "Douche":
- 
-                 break;
-                 
-                 case "jet d'exploration":
- 
-                 break;
-                 
-                 case "jet d'attaque":
- 
-                 break;
-                 
-                 case "terminal de recherche":
- 
-                 break;
-                 
-                 case "terminal":
- 
-                 break;
-                 
-                 case "reacteur BILGRED":
- 
-                 break;
-                 
-                 case "gaz antispore":
- 
-                 break;
-                 
-                 case "sérum de constipaspore":
- 
-                 break;
-                   case "savon mushicide":
- 
-                 break;
-                 
-                 case "Talki":
-                    
-                     
- 
-                 break;
-                 
-                 
-            }
-              
+            }       
     }
     else{
      System.out.println("vous ne pouvez pas utiliser cet objet");
     }
          
 }
-     
-   ArrayList<String> listeObjet= new ArrayList <>();
-      
-   public Objets(){
+ 
+  public Objets(){
        //Création et ajout des objets dans la liste
        listeObjet.add("Armure");
        listeObjet.add("clé à molette");
@@ -253,6 +198,8 @@ public class Objets {
         return listeObjet;
     }
  
+     
+  
  
  
  
